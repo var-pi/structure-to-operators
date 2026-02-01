@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,physics,mathtools}
+\title{Hamiltonian mechanics}
+\author{Stefan Ehin}
+
+\begin{document}
+
+\maketitle
+    
+In standard mechanics, Hamiltonian \(H: T^*Q \times \mathbb{R} \rightarrow \mathbb{R}\) coincides with total energy \(T+V\). 
+In coordinates \((p, q) \in T^*Q\) it induces
+\[
+    \dot{\mathbf{p}} = -\pdv{H}{\mathbf{q}} \quad \dot{\mathbf{q}} = \pdv{H}{\mathbf{p}}.
+\]
+Hence given \(H\) we obtain an evolution vector field \(X_H \in \Gamma(TT^*Q)\). In a coordinate-free manner we can state the dynamics more concisely
+\[
+    \iota_{X_H}\omega = dH
+\]
+where \(\omega \in \Omega^2(T^*Q) \) is some symplectic form. Note that \(T^*Q\) has a tautological 1-form
+\[
+    \theta \coloneqq p_i dq^i \in \Omega(T^*Q)
+\] and hence also a canonical symplectic form
+\[
+    -d\theta = dq^i \wedge dp_i.
+\]
+Symplectic structure induces a Poisson bracket
+\[
+    \{F, G\} \coloneqq \omega(X_F,X_G)
+\]
+that is handy for instance for calculating the total derivative of an observable
+\[
+    \frac{dF}{dt} = \{F,H\} + \frac{\partial F}{\partial t}.
+\]
+This implies that if \(\{F,H\} = 0\) and \(\pdv{F}{t}=0\) then an observable \(F\) is conserved along the flow.
+
+\end{document}
