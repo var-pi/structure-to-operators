@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,mathtools}
+\title{Lorentzian manifold}
+\author{Stefan Ehin}
+
+\begin{document}
+
+\maketitle
+
+The motion of a particle can be described by a smooth curve on a Lorentzian spacetime manifold $(M,g)$. Such curve
+\[
+    \gamma:I\rightarrow M
+\]
+is called a \textbf{worldline} and is physically admissible for a massive particle iff in $(-+++)$ signature convention  
+\[
+    \forall \tau \in I \ g(\dot{\gamma}(\tau), \dot{\gamma}(\tau)) < 0
+\]
+and $\dot\gamma$ lies in the chosen future light cone at each point.
+
+A spacetime curve is more fundamental than a spatial trajectory parameterized by time, since a spacetime point has no distinguished time coordinate. To represent motion as x(t), one must choose a foliation of spacetime by spacelike hypersurfaces and thereby introduce a time function.
+
+\textbf{Lorentz transformations} relate different inertial coordinate systems arising from different choices of spacetime splitting. In Minkowski spacetime, a Lorentz transformation is an isometry of the Lorentzian metric, and therefore preserves the light cone structure.
+
+\section*{Insights for Operator Learning}
+
+Consider a problem
+\[
+    \partial_t u = L u.
+\]
+
+If $L$ is a constant-coefficient, translation-invariant differential operator on $\mathbb{R}^d$, then the solution operator satisfies
+\[
+    S(t)u_0 = G_t \star u_0.
+\]
+For hyperbolic equations, causality implies finite propagation speed
+\[
+    \text{supp} \ G_t \subset B_{ct}(0).
+\]
+This is exemplified by d’Alembert’s formula for the 1D wave equation. It is also fascinating that from semigroup theory
+\[
+    S(t) = e^{tL}
+\]
+and hence equivarience with $L$ leads to equivarience with $S(t)$:
+\[
+    L(g \cdot u) = g \cdot (Lu) \Rightarrow S(t)(g \cdot u_0) = g \cdot (S(t)u_0)
+\]
+where $g \cdot u(x) \coloneqq u(g^{-1}x)$ denotes the pullback action of $g$ on functions.
+
+Note also that the spacetime formulation replaces the evolution problem with a geometric problem of finding integral curves of a vector field on an appropriate configuration manifold.
+
+\end{document}
