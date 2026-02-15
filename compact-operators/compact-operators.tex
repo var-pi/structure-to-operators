@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,physics,mathtools}
+\title{Compact operators}
+\author{Stefan Ehin}
+
+\begin{document}
+
+\maketitle
+
+Let $X, Y$ be Banach spaces. An operator
+\[
+    T \in \mathcal{L}(X, Y)
+\]
+is called compact when $T(B_X)$ is relatively compact. The space of compact operators is denoted
+\[
+    \mathcal{K}(X, Y).
+\]
+Every finite rank operator is compact. In general,
+\[
+    \overline{\mathcal{F}(X,Y)} \subset \mathcal{K}(X,Y)
+\]
+and equality holds whenever $X$ has the approximation property (in particular if $X$ is a Hilbert space).
+
+In other words compactness means that the image of the unit ball has vanishing Kolmogorov widths:
+\[
+    d_n(T) \rightarrow 0.
+\]
+Hence the geometry of $T(B_X)$ admits low-dimensional approximations.
+In Hilbert spaces this is equivalent to decay of singular values
+\[
+    d_n(T) = \sigma_{n+1}(T).
+\]
+Thus compactness encodes the intrinsic dimensionality of the solution manifold.
+
+
+\section*{Insights for Operator Learning}
+
+We know that
+\[
+    T \in \mathcal{F}(X,Y) \Leftrightarrow \exists \varphi_j \in X^* \ T(x) = \sum^k_{j=1}\varphi_j(x) y^j.
+\]
+Hence, to construct a finite rank approximation $T_n = P_{Y_n}T$ of a compact operator $T$ between Hilbert spaces one has to choose $Y_n \subset Y$ such that $\text{dim} Y_n = n$ and
+\[
+    d(Y_n,T(B_X)) \approx d_n(T),
+\]
+an orthonormal basis $y^j \in Y_n$ and compute
+\[
+    \varphi_i(x) = \langle T_n(x), y^i \rangle = \langle T(x), y^i \rangle.
+\]
+
+In conclusion, instead of looking for an exact compact solution operator $T$ one could look for $P_{Y_n} T$ where $d(T(B_X),Y_n) \approx 0$.
+
+
+\end{document}
